@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
-import Head from 'next/Head';
-import Link from 'next/Link';
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image'
 
 
 export default function Home(pokemon) {
@@ -17,7 +18,16 @@ export default function Home(pokemon) {
 
             <Link href={`/pokemon?id=${i + 1}`}>
               <a className="border p-4 border-gray my-2 capitalize flex items-center text-lg bg-white rounded-md" >
-                <img className="w-20 h-20 mr-3" src={p.image} alt={p.name} />
+                {/* <img className="w-20 h-20 mr-3" src={p.image} alt={p.name} /> */}
+                <Image
+                  src={p.image}
+                  alt={p.name}
+                  width={150}
+                  height={150}
+                  unoptimized={true}
+                  loading="eager"
+                  layout="fixed"
+                />
                 <span className="mr-2 font-bold">{i + 1} -</span>
                 {p.name}
               </a>

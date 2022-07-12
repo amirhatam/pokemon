@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import Link from 'next/Link';
+import Link from 'next/link';
+import Image from 'next/image'
 
 export default function pokemon({ pokeman }) {
     // console.log(pokeman);
@@ -16,7 +17,23 @@ export default function pokemon({ pokeman }) {
 
                 <div className="grid grid-rows-2 grid-flow-col gap-2">
                     <div className="row-span-3 ">
-                        <img className="mx-auto" src={pokeman.image} alt={pokeman.name} />
+                        {/* <img
+                            className="mx-auto"
+                            src={pokeman.image}
+                            alt={pokeman.name}
+                            unoptimized={true}
+                            loading="eager"
+                            layout="fixed"
+                        /> */}
+                        <Image
+                            src={pokeman.image}
+                            alt={pokeman.name}
+                            width={250}
+                            height={250}
+                            unoptimized={true}
+                            loading="eager"
+                            layout="fixed"
+                        />
                     </div>
 
                     <div className="row-span-2 col-span-2 ">
